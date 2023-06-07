@@ -23,13 +23,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //is used to set the window flags for an activity to achieve a fullscreen display.
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         imageV =  findViewById(R.id.imageV);
         text = findViewById(R.id.txtBurger);
 
+        //method is used to load an animation from an XML resource file and create
+        //an instance of the animation object
         top = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottom = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
 
+        //is used in Android to apply an animation to a TextView or any other view.
         text.setAnimation(bottom);
         imageV.setAnimation(top);
 
